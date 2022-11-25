@@ -1,0 +1,50 @@
+﻿@model Inmbiliariagestion.Models.ALQUIILER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ALQUIILER</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarifa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarifa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aumento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aumento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Inquilino.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inquilino.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codigoDpto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

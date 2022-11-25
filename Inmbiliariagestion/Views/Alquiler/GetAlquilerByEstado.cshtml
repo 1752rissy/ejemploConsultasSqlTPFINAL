@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Inmbiliariagestion.Models.ALQUIILER>
+@{
+    ViewBag.Title = "GetAlquilerByEstado";
+}
+
+<h2>consulta de alquileres</h2>
+@using (Html.BeginForm())
+{
+<p>
+    <select name="estado">
+        <option value="1">alquilado
+        </option>
+        <option value="0">no alquilado
+        </option>
+    </select>
+
+</p>
+    <p>
+        <input type="submit" value="Actualizar" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Domicilio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarifa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aumento)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Domicilio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tarifa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aumento)
+                </td>
+            </tr>
+        }
+    }
+</table>
+

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Inmbiliariagestion.Models.ALQUIILER>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Domicilio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarifa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aumento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inquilino.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Domicilio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tarifa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aumento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inquilino.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.codigoDpto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.codigoDpto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.codigoDpto })
+        </td>
+    </tr>
+}
+
+</table>
